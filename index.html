@@ -46,9 +46,11 @@
     <div class="flex flex-col gap-16">
 
       <article class="flex flex-col gap-6">
-        <a href="https://dawidw.github.io/playground/experiments/review-rate/" target="_blank" rel="noopener" aria-label="Agentic UI experiments">
-          <img src="assets/review-rate.png" alt="Vendor Management System contractors table with an AI agent panel on top" width="835" height="520" class="w-full rounded-card bg-surface" loading="lazy">
-        </a>
+        <div class="relative w-full aspect-[1280/800] rounded-card overflow-hidden bg-surface" data-embed>
+          <img src="assets/review-rate.jpg" alt="Vendor Management System contractors table with an AI agent panel on top" width="835" height="520" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          <iframe data-src="https://dawidw.github.io/playground/experiments/review-rate/?embed" title="Agentic UI experiments, demo in a loop" width="1280" height="800" tabindex="-1" aria-hidden="true" class="absolute left-0 top-0 border-0 pointer-events-none origin-top-left opacity-0 transition-opacity duration-500" style="width:1280px;height:800px"></iframe>
+          <a href="https://dawidw.github.io/playground/experiments/review-rate/" target="_blank" rel="noopener" class="absolute inset-0" aria-label="Open the experiments"></a>
+        </div>
         <div class="flex flex-col gap-2">
           <div>
             <h3 class="text-item">Agentic UI experiments</h3>
@@ -63,7 +65,7 @@
 
       <article class="flex flex-col gap-6">
         <a href="https://studyofspace.gallery" target="_blank" rel="noopener" aria-label="Study of Space">
-          <img src="assets/study-of-space.png" alt="Study of Space, Mac app with the artists panel and a wave poster preview" width="835" height="520" class="w-full rounded-card bg-surface" loading="lazy">
+          <img src="assets/study-of-space.jpg" alt="Study of Space, Mac app with the artists panel and a wave poster preview" width="835" height="520" class="w-full rounded-card bg-surface" loading="lazy">
         </a>
         <div class="flex flex-col gap-2">
           <div class="flex items-center gap-4">
@@ -84,7 +86,7 @@
 
       <article class="flex flex-col gap-6">
         <a href="https://getgrippy.app" target="_blank" rel="noopener" aria-label="Grippy">
-          <img src="assets/grippy.png" alt="Six Grippy app screens: boulder list, boulder preview, details, hold selection and notes" width="835" height="520" class="w-full rounded-card bg-surface" loading="lazy">
+          <img src="assets/grippy.jpg" alt="Five Grippy app screens: boulder list, boulder preview, details, hold selection and notes" width="835" height="520" class="w-full rounded-card bg-surface" loading="lazy">
         </a>
         <div class="flex flex-col gap-2">
           <div class="flex items-center gap-4">
@@ -216,6 +218,17 @@
     if (y) out.push(y + (y === 1 ? " year" : " years"));
     if (r) out.push(r + (r === 1 ? " month" : " months"));
     if (out.length) el.textContent = out.join(" ");
+  });
+  // Live demo embeds: scale a 1280x800 iframe to the card, start it when it nears the viewport.
+  document.querySelectorAll("[data-embed]").forEach(function (box) {
+    var f = box.querySelector("iframe");
+    var fit = function () { f.style.transform = "scale(" + box.clientWidth / 1280 + ")"; };
+    fit(); new ResizeObserver(fit).observe(box);
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    new IntersectionObserver(function (es, io) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect(); f.addEventListener("load", function () { f.classList.remove("opacity-0"); }); f.src = f.dataset.src;
+    }, { rootMargin: "300px" }).observe(box);
   });
 </script>
 </body>
