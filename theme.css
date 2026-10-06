@@ -26,6 +26,7 @@
 
   /* Radius and widths */
   --radius-card: 16px;
+  --radius-xl: 32px;
   --width-page: 1440px;
   --width-label: 397px;
   --width-content: 835px;
@@ -49,4 +50,5 @@ a:hover { text-decoration-thickness: 2px; }
   .text-name { font-size: 36px; line-height: 44px; letter-spacing: -1.1px; }
   .text-subtitle { font-size: 26px; line-height: 36px; letter-spacing: -0.8px; }
   .text-lead { font-size: 20px; line-height: 32px; }
+  .text-stat { font-size: 48px; line-height: 52px; letter-spacing: -2.4px; }
 }

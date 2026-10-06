@@ -27,7 +27,7 @@ tailwind.config = {
       45: "var(--space-45)",
     },
     fontFamily: { sans: ['"Inter"', "-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', "system-ui", "sans-serif"] },
-    borderRadius: { none: "0", card: "var(--radius-card)" },
+    borderRadius: { none: "0", card: "var(--radius-card)", xl: "var(--radius-xl)" },
     // Text styles `Landing/*` from Figma: [size, { lineHeight, letterSpacing, fontWeight }]
     fontSize: {
       name: ["45.6px", { lineHeight: "60px", letterSpacing: "-1.44px", fontWeight: "600" }],
@@ -37,6 +37,7 @@ tailwind.config = {
       section: ["32px", { lineHeight: "40px", letterSpacing: "-0.96px", fontWeight: "500" }],
       item: ["24px", { lineHeight: "28.8px", letterSpacing: "-0.48px", fontWeight: "500" }],
       body: ["16px", { lineHeight: "26.4px", letterSpacing: "-0.16px", fontWeight: "400" }],
+      stat: ["72px", { lineHeight: "76px", letterSpacing: "-3.6px", fontWeight: "600" }],
       caption: ["18px", { lineHeight: "22.5px", letterSpacing: "0", fontWeight: "500" }],
     },
     extend: {
