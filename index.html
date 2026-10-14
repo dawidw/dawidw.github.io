@@ -60,6 +60,10 @@
             <a href="https://dawidw.github.io/playground/" target="_blank" rel="noopener" class="underline">Open the experiments ↗</a>
           </p>
         </div>
+        <!-- How it works: isometric illustration + technical steps, loaded from the playground. The embed posts its height. -->
+        <div data-flow>
+          <iframe data-src="https://dawidw.pl/playground/how-it-works/" title="How an agent request travels from the interface through the database, prompt and model and back, step by step" width="835" height="560" scrolling="no" class="block w-full border-0" style="height:560px"></iframe>
+        </div>
       </article>
 
       <article class="flex flex-col gap-6">
@@ -243,6 +247,18 @@
     new IntersectionObserver(function (es, io) {
       if (!es[0].isIntersecting) return;
       io.disconnect(); f.addEventListener("load", function () { f.classList.remove("opacity-0"); }); f.src = f.dataset.src;
+    }, { rootMargin: "300px" }).observe(box);
+  });
+  // Flow embed: load when it nears the viewport, then follow the height the embedded page reports.
+  document.querySelectorAll("[data-flow]").forEach(function (box) {
+    var f = box.querySelector("iframe");
+    addEventListener("message", function (e) {
+      if (e.source !== f.contentWindow || !e.data || e.data.type !== "flow-height") return;
+      f.style.height = e.data.height + "px";
+    });
+    new IntersectionObserver(function (es, io) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect(); f.src = f.dataset.src;
     }, { rootMargin: "300px" }).observe(box);
   });
 </script>
