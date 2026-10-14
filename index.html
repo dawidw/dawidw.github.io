@@ -45,11 +45,6 @@
     <div class="flex flex-col gap-16">
 
       <article class="flex flex-col gap-6">
-        <div class="relative w-full aspect-[1280/800] rounded-card overflow-hidden bg-surface" data-embed>
-          <img src="assets/review-rate.jpg" alt="Vendor Management System contractors table with an AI agent panel on top" width="835" height="520" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <iframe data-src="https://dawidw.github.io/playground/experiments/review-rate/?embed" title="Agentic UI experiments, demo in a loop" width="1280" height="800" tabindex="-1" aria-hidden="true" class="absolute left-0 top-0 border-0 pointer-events-none origin-top-left opacity-0 transition-opacity duration-500" style="width:1280px;height:800px"></iframe>
-          <a href="https://dawidw.github.io/playground/" target="_blank" rel="noopener" class="absolute inset-0" aria-label="Open the experiments"></a>
-        </div>
         <div class="flex flex-col gap-2">
           <div>
             <h3 class="text-item">Agentic UI experiments</h3>
@@ -60,6 +55,12 @@
         <!-- How it works: isometric illustration + technical steps, loaded from the playground. The embed posts its height. -->
         <div data-flow>
           <iframe data-src="https://dawidw.pl/playground/how-it-works/?only=review-rate" title="How an agent request travels from the interface through the database, prompt and model and back, step by step" width="835" height="560" scrolling="no" class="block w-full border-0" style="height:560px"></iframe>
+        </div>
+        <p class="text-body text-muted">And here is the interface side of the same request, running live: the agent reviews one rate that is too high and one that is too low, shows its steps and its reason, and waits for a person to approve.</p>
+        <div class="relative w-full aspect-[1280/800] rounded-card overflow-hidden bg-surface" data-embed>
+          <img src="assets/review-rate.jpg" alt="Vendor Management System contractors table with an AI agent panel on top" width="835" height="520" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          <iframe data-src="https://dawidw.github.io/playground/experiments/review-rate/?embed" title="Agentic UI experiments, demo in a loop" width="1280" height="800" tabindex="-1" aria-hidden="true" class="absolute left-0 top-0 border-0 pointer-events-none origin-top-left opacity-0 transition-opacity duration-500" style="width:1280px;height:800px"></iframe>
+          <a href="https://dawidw.github.io/playground/" target="_blank" rel="noopener" class="absolute inset-0" aria-label="Open the experiments"></a>
         </div>
         <p class="text-body flex gap-6">
           <a href="https://dawidw.github.io/playground/" target="_blank" rel="noopener" class="underline">Open the experiments ↗</a>
