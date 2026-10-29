@@ -63,22 +63,58 @@
         <div class="flex flex-col gap-2">
           <div>
             <h3 class="text-item">Agentic UI experiments</h3>
-            <p class="text-body text-muted">Experiments · Agentic UI</p>
+            <p class="text-body text-muted">Experiments · Agentic UI &amp; commerce</p>
           </div>
-          <p class="text-body text-muted">A series of experiments with agentic UI in a Vendor Management System: an AI agent living inside a contractors table, asking, working and proposing changes next to the people who approve them.</p>
+          <p class="text-body text-muted">Interactive demos of agentic UI and agentic commerce: CRM workflows where an agent proposes changes next to the people who approve them, and shopping flows where an agent handles reorder and checkout with you in the loop.</p>
         </div>
-        <!-- How it works: isometric illustration + technical steps, loaded from the playground. The embed posts its height. -->
-        <div data-flow>
-          <iframe data-src="https://dawidw.pl/playground/how-it-works/?only=review-rate" title="How an agent request travels from the interface through the database, prompt and model and back, step by step" width="835" height="560" scrolling="no" class="block w-full border-0" style="height:560px"></iframe>
-        </div>
-        <p class="text-body text-muted">And here is the interface side of the same request, running live: the agent reviews one rate that is too high and one that is too low, shows its steps and its reason, and waits for a person to approve.</p>
-        <div class="relative w-full aspect-[1280/800] rounded-card overflow-hidden bg-surface" data-embed>
-          <img src="assets/review-rate.jpg" alt="Vendor Management System contractors table with an AI agent panel on top" width="835" height="520" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <iframe data-src="https://dawidw.github.io/playground/experiments/review-rate/?embed" title="Agentic UI experiments, demo in a loop" width="1280" height="800" tabindex="-1" aria-hidden="true" class="absolute left-0 top-0 border-0 pointer-events-none origin-top-left opacity-0 transition-opacity duration-500" style="width:1280px;height:800px"></iframe>
-          <a href="https://dawidw.github.io/playground/" target="_blank" rel="noopener" class="absolute inset-0" aria-label="Open the experiments"></a>
-        </div>
-        <p class="text-body flex gap-6">
-          <a href="https://dawidw.github.io/playground/" target="_blank" rel="noopener" class="underline">Open the experiments ↗</a>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 list-none p-0 m-0 items-stretch">
+          <li class="flex">
+            <a href="https://dawidw.pl/playground/experiments/review-rate/" target="_blank" rel="noopener" class="group flex h-full w-full flex-col overflow-hidden rounded-card border border-line bg-surface transition-colors hover:border-muted">
+              <div class="relative aspect-[16/10] shrink-0 bg-bg">
+                <img src="assets/experiments/review-rate.png" alt="" width="640" height="400" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+              </div>
+              <div class="flex flex-1 flex-col gap-2 p-4">
+                <strong class="block text-body font-semibold leading-[26.4px]">Agentic CRM #1 · Review rate</strong>
+                <span class="text-body text-muted">The agent reviews daily rates: it trims one that's too high and raises one that's too low, with a reason and your approval.</span>
+              </div>
+            </a>
+          </li>
+          <li class="flex">
+            <a href="https://dawidw.pl/playground/experiments/compliance-sweep/" target="_blank" rel="noopener" class="group flex h-full w-full flex-col overflow-hidden rounded-card border border-line bg-surface transition-colors hover:border-muted">
+              <div class="relative aspect-[16/10] shrink-0 bg-bg">
+                <img src="assets/experiments/compliance-sweep.png" alt="" width="640" height="400" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+              </div>
+              <div class="flex flex-1 flex-col gap-2 p-4">
+                <strong class="block text-body font-semibold leading-[26.4px]">Agentic CRM #2 · Compliance sweep</strong>
+                <span class="text-body text-muted">The agent walks the whole list. Six people stay quiet. Two need you: a chase to send, and a call it will not make.</span>
+              </div>
+            </a>
+          </li>
+          <li class="flex">
+            <a href="https://dawidw.pl/playground/experiments/agent-commerce-shop/" target="_blank" rel="noopener" class="group flex h-full w-full flex-col overflow-hidden rounded-card border border-line bg-surface transition-colors hover:border-muted">
+              <div class="relative aspect-[16/10] shrink-0 bg-bg">
+                <img src="assets/experiments/agent-commerce-shop.png" alt="" width="640" height="400" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+              </div>
+              <div class="flex flex-1 flex-col gap-2 p-4">
+                <strong class="block text-body font-semibold leading-[26.4px]">Shop · Dog food reorder</strong>
+                <span class="text-body text-muted">Connect Shop Pay, set budget and delivery, and let the agent reorder Luna’s food to your parcel locker.</span>
+              </div>
+            </a>
+          </li>
+          <li class="flex">
+            <a href="https://dawidw.pl/playground/experiments/agent-commerce-inpost/" target="_blank" rel="noopener" class="group flex h-full w-full flex-col overflow-hidden rounded-card border border-line bg-surface transition-colors hover:border-muted">
+              <div class="relative aspect-[16/10] shrink-0 bg-bg">
+                <img src="assets/experiments/agent-commerce-inpost.png" alt="" width="640" height="400" loading="lazy" class="absolute inset-0 h-full w-full object-cover">
+              </div>
+              <div class="flex flex-1 flex-col gap-2 p-4">
+                <strong class="block text-body font-semibold leading-[26.4px]">InPost Pay · Price check</strong>
+                <span class="text-body text-muted">After a Shop order, the agent connects InPost Pay, finds the same food cheaper, and finishes checkout in the familiar flow.</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <p class="text-body">
+          <a href="https://dawidw.pl/playground/" target="_blank" rel="noopener" class="underline">See more ↗</a>
         </p>
       </article>
 
@@ -253,29 +289,6 @@
     if (y) out.push(y + (y === 1 ? " year" : " years"));
     if (r) out.push(r + (r === 1 ? " month" : " months"));
     if (out.length) el.textContent = out.join(" ");
-  });
-  // Live demo embeds: scale a 1280x800 iframe to the card, start it when it nears the viewport.
-  document.querySelectorAll("[data-embed]").forEach(function (box) {
-    var f = box.querySelector("iframe");
-    var fit = function () { f.style.transform = "scale(" + box.clientWidth / 1280 + ")"; };
-    fit(); new ResizeObserver(fit).observe(box);
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    new IntersectionObserver(function (es, io) {
-      if (!es[0].isIntersecting) return;
-      io.disconnect(); f.addEventListener("load", function () { f.classList.remove("opacity-0"); }); f.src = f.dataset.src;
-    }, { rootMargin: "300px" }).observe(box);
-  });
-  // Flow embed: load when it nears the viewport, then follow the height the embedded page reports.
-  document.querySelectorAll("[data-flow]").forEach(function (box) {
-    var f = box.querySelector("iframe");
-    addEventListener("message", function (e) {
-      if (e.source !== f.contentWindow || !e.data || e.data.type !== "flow-height") return;
-      f.style.height = e.data.height + "px";
-    });
-    new IntersectionObserver(function (es, io) {
-      if (!es[0].isIntersecting) return;
-      io.disconnect(); f.src = f.dataset.src;
-    }, { rootMargin: "300px" }).observe(box);
   });
 </script>
 </body>
